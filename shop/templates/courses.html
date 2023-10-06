@@ -17,11 +17,11 @@
         {% for course in courses %}
         <tr>
            
-            <td>{{course.title}}</td>
+            <td><a href={{course.id}}>{{course.title}}</a></td>
             <td>{{course.category}}</td>
             <td>{{course.price}}</td>
             <td>{{course.students_qty}}</td>
-            <td><Button class="btn btn-primary">Buy</Button></td>
+            <td><button style="display: block; margin: 0 auto;" class="btn btn-primary">Buy</button></td>
         </tr>
         {% endfor %}
     </tbody>
