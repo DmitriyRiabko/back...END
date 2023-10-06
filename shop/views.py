@@ -1,9 +1,14 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 
-# Create your views here.
 
+from .models import Course
 
 def index(request):
+    courses = Course.objects.all()
+    return render(request, 'courses.html',{'courses':courses})
 
-    return HttpResponse('Hello from Shop app')
+
+def single_course(request, course_id):
+    course = Course.objects.get(pk=course_id)
+    return render(request,'single_course.html',{'course':course})
